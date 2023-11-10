@@ -1,21 +1,35 @@
 /* CURRENT DATE */
 var currentDay = dayjs().format('dddd, MMMM D, YYYY');
 var currentDayEl = $('#currentDay');
+var currentTime = parseInt(dayjs().format('HH'));
+currentTime = 12;
 
 currentDayEl.text(currentDay);
 
 /* TIMEBLOCKS */
-var timeblocksEl = $('#timeblocks');
+var taskCell = $('.task');
+// console.log(taskCell);
+var hourCell = $('.hour');
+// console.log(hourCell);
 
-var tableRow = $('<tr>');
-var tableColumn1 = $('<td>');
-var tableColumn2 = $('<td colspan="5">');
-var tableColumn3 = $('<td>');
+console.log(taskCell[2])
 
-tableColumn1.text('lol');
-tableColumn2.text('what the');
-tableColumn3.text('fuck');
+for (i=0; i<hourCell.length; i++){
+    var tableTime = parseInt(hourCell[i].firstChild.data);
+    var currentTaskCell;
 
-var timeblock = tableRow.append(tableColumn1, tableColumn2, tableColumn3);
-
-timeblocksEl.append(timeblock);
+    if (tableTime === currentTime) {
+        console.log(tableTime + " it's now")
+        currentTaskCell = taskCell[i];
+        currentTaskCell.setAttribute('class', 'col-8 cell task present');
+    } else if (tableTime < currentTime) {
+        console.log(tableTime + " it's in the past")
+        currentTaskCell = taskCell[i];
+        currentTaskCell.setAttribute('class', 'col-8 cell task past');
+    } else {
+        console.log(tableTime + " it's in the future")
+        currentTaskCell = taskCell[i];
+        currentTaskCell.setAttribute('class', 'col-8 cell task future');
+    }
+    
+}

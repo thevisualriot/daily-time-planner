@@ -31,16 +31,31 @@ header {
   border-radius: 15px;
 }
 
+/* .container {
+  display: flex;
+} */
+
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
 }
 
+.cell {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  justify-content: center;
+}
+
+.task {
+  background-color: yellow;
 }
 
 .past {
@@ -58,15 +73,28 @@ header {
   color: white;
 }
 
+
+
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  border-right: none;
   background-color: #06aed5;
   color: white;
+  justify-content: center;
+}
+
+button {
+  shadow: none;
+  border: none;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+input {
+  outline: none;
 }
