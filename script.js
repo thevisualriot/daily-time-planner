@@ -22,10 +22,12 @@ for (i=0; i<hourCell.length; i++){
         console.log(tableTime + " it's now")
         currentTaskCell = taskCell[i];
         currentTaskCell.setAttribute('class', 'col-8 cell task present');
+        currentTaskCell.disabled = true;
     } else if (tableTime < currentTime) {
         console.log(tableTime + " it's in the past")
         currentTaskCell = taskCell[i];
         currentTaskCell.setAttribute('class', 'col-8 cell task past');
+        currentTaskCell.disabled = true;
     } else {
         console.log(tableTime + " it's in the future")
         currentTaskCell = taskCell[i];
@@ -33,3 +35,5 @@ for (i=0; i<hourCell.length; i++){
     }
     
 }
+
+
