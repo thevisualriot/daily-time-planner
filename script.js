@@ -75,34 +75,38 @@ buttonEl.on('click', function(e){
 
     // add input to tasks
         newTask = Object.create(task);  // create new task object
-        newTask.id = buttonParent.id;
-        newTask.content = inputTask;
-        saveToLocalStorage(newTask);
+        newTask.id = buttonParent.id; // set its ID as the buttonParent id
+        newTask.content = inputTask; // set its content as the input value
+        saveToLocalStorage(newTask); // save to localStorage
 })
 
 
-function saveToLocalStorage(object){
-    var duplicate = tasks.findIndex(task => task.id === object.id);
 
-    if(duplicate !== -1) {
-        tasks[duplicate].content = object.content;
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    } else {
-        tasks.push(object);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
+/* ----------------------- FUNCTIONS -------------------------- */
+
+// Save new Object to local Storage or Update its content
+function saveToLocalStorage(object){
+    var duplicate = tasks.findIndex(task => task.id === object.id); // check if it is duplicate
+
+    if(duplicate !== -1) { // if it is duplicate
+        tasks[duplicate].content = object.content; // update it's content
+        localStorage.setItem('tasks', JSON.stringify(tasks)); // save to localStorage
+    } else {                // if it's not duplicate
+        tasks.push(object); // add to the tasks
+        localStorage.setItem('tasks', JSON.stringify(tasks)); // save to the localStorage
     }
 }
 
-
-function updateTasks() {
+// update the array of Tasks
+function updateTasks() { 
     var savedTasks;
     if (localStorage) {
-        savedTasks = JSON.parse(localStorage.getItem('tasks'));
+        savedTasks = JSON.parse(localStorage.getItem('tasks')); // get saved items from localStorage
     
-        if (savedTasks) {
-            tasks = savedTasks;
+        if (savedTasks) { //if savedTasks is not empty
+            tasks = savedTasks; // update tasks array with the data from localStorage
         } else {
-            tasks = [];
+            tasks = []; // otherwise, return an empty array
         }
     }
 }
