@@ -4,7 +4,7 @@ Welcome to my simple calendar app that allows users to input and save tasks for 
 
 ## 🚀 Live Version
 
-Experience the live version of the Daily Time Planner Application [HERE](https://thevisualriot.github.io/coding-quiz/)
+Experience the live version of the Daily Time Planner Application [HERE](https://thevisualriot.github.io/daily-time-planner/)
 
 ![Interface of the Daily Time Planner](./assets/app%20interface.gif)
 
