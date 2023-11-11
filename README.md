@@ -1,89 +1,37 @@
-# work-day-scheduler
-A simple calendar application with possibility to add events
+# Daily Time Planner
+
+Welcome to my simple calendar app that allows users to input and save tasks for different hours of the day. The app utilizes HTML, CSS, and JavaScript, along with the [dayjs](https://day.js.org/) library for date and time manipulation.
+
+## 🚀 Live Version
+
+Experience the live version of the Daily Time Planner Application [HERE](https://thevisualriot.github.io/coding-quiz/)
+
+![Interface of the Daily Time Planner](./assets/app%20interface.gif)
 
 
-## Your Task
+## 💻 Features
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+- **Current Date Display:** The app displays the current date at the top of the page.
 
-You'll need to use the [Day.js](https://day.js.org/docs/en/display/format) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+- **Timeblocks:** Tasks are organized into timeblocks corresponding to different hours of the day. Each timeblock has an input field where users can enter their tasks.
 
-## User Story
+- **Styling based on Time:** Timeblocks are styled differently based on whether the time is in the past, present, or future. Past timeblocks are grayed out, the present timeblock is highlighted, and future timeblocks have a different color.
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+- **Save Button:** Each timeblock has a "Save" button that allows users to save their task for that specific hour.
 
-## Acceptance Criteria
+- **Local Storage:** Tasks are saved to local storage, allowing them to persist even when the page is refreshed.
 
-The app should:
+## 📐 Code Elements
 
-* Display the current day at the top of the calender when a user opens the planner.
- 
-* Present timeblocks for standard business hours when the user scrolls down.
- 
-* Color-code each timeblock based on past, present, and future when the timeblock is viewed.
- 
-* Allow a user to enter an event when they click a timeblock
+- **Variables:** Definitions for various DOM elements and variables used throughout the script.
 
-* Save the event in local storage when the save button is clicked in that timeblock.
+- **Timeblocks Setup:** Iterates through timeblocks, retrieves tasks from local storage, and updates the UI accordingly.
 
-* Persist events between refreshes of a page
+- **Save Button Event:** Handles the click event on the "Save" button. Retrieves input values and saves tasks to local storage.
 
-The following animation demonstrates the application functionality:
+- **Functions:**
+  - `saveToLocalStorage`: Checks for duplicates and updates existing tasks or adds new tasks to local storage.
+  - `updateTasks`: Retrieves tasks from local storage and updates the `tasks` array.
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./assets/05-third-party-apis-homework-demo.gif)
-
-
-## Grading Requirements
-
-This homework is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses a date utility library to work with date and time
-
-### Deployment: 32%
-
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the homework instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## 📜 License
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
