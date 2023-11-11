@@ -98,3 +98,7 @@ button {
 input {
   outline: none;
 }
+
+.icon {
+  pointer-events: none;
+}
