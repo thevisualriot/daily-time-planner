@@ -6,7 +6,6 @@ var buttonEl = $('.saveBtn'); // access button
 
 var currentDay = dayjs().format('dddd, MMMM D, YYYY'); // today date
 var currentTime = parseInt(dayjs().format('HH')); // what hour it is now
-currentTime = 13;
 
 // task object:
 var task = {
