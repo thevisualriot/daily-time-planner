@@ -5,9 +5,12 @@ var currentTime = parseInt(dayjs().format('HH'));
 currentTime = 12;
 var currentTaskCell;
 var inputTask;
-var  tasks = [
-    {time: 0, content: ''},
-];
+var task = {
+    id: '',
+    content: '',
+}
+
+var  tasks = [];
 var savedTasks;
 
 savedTasks = localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -44,6 +47,7 @@ for (i=0; i<hourCell.length; i++){
 
 /* BUTTON */
 var buttonEl = $('.saveBtn');
+var newTask;
 
 buttonEl.on('click', function(e){
     var buttonParent = e.target.parentElement;
@@ -53,11 +57,18 @@ buttonEl.on('click', function(e){
 
     inputTaskCell = buttonParent.querySelector('input');
     inputTask = inputTaskCell.value;
-console.log('input: ' + inputTask)
+    console.log('input: ' + inputTask)
+
+    if (inputTask != null) {
+        newTask = Object.create(task);
+        newTask.id = buttonParent.id;
+        newTask.content = inputTask;
+        tasks.push(newTask)
+        saveToLocalStorage();
+    }
 })
 
 
-
 function saveToLocalStorage(){
-savedTasks = localStorage.setItem('tasks', JSON.stringify(tasks));
+localStorage.setItem('tasks', JSON.stringify(tasks));
 }
